@@ -1,0 +1,1 @@
+class Player < ApplicationRecord; end

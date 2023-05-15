@@ -1,0 +1,9 @@
+= turbo_frame_tag "round_bank" do
+  = render "round_bank", round: @round
+
+= turbo_frame_tag "game_bank" do
+  = render "game_bank", game: @game
+
+p = link_to "Верно", correct_answer_round_path, method: :post
+p = link_to "Не верно", incorrect_answer_round_path, method: :post
+p = link_to "Банк", go_to_bank_round_path, method: :post

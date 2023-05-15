@@ -1,0 +1,4 @@
+= render "game_bank", game: @game
+
+- @resources.each do |round|
+  p = link_to round.name, round_path(round) 
