@@ -1,3 +1,5 @@
+@import 'timer';
+
 body {
   height: 100vh;
   display: flex;
@@ -8,9 +10,16 @@ body {
   overflow: hidden;
 
   .show-round {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    .timer-container {
+      position: absolute;
+      bottom: 0;
+      left: 600px;
+    }
   }
   
   .money {
@@ -26,7 +35,7 @@ body {
       box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
 
       &.passed {
-        background: radial-gradient(farthest-side at top left, #fff, #33cd17);
+        background: radial-gradient(farthest-side at top left, #fff, #4b984a);
         font-weight: 500;
         color: white;
 

@@ -5,6 +5,9 @@
   = turbo_frame_tag "game_bank" do
     = render "game_bank", game: @game
 
+  .timer-container
+    = render 'timer'
+
   .hidden-block
     = link_to "Верно", correct_answer_round_path, method: :post, "data-action"=>"keydown.up@window->keys_listener#upHandler", id: "up-link"
     = link_to "Не верно", incorrect_answer_round_path, method: :post, "data-action"=>"keydown.left@window->keys_listener#leftHandler", id: "left-link"

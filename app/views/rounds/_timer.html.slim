@@ -1,0 +1,14 @@
+.timer data-controller="timer"
+  .wrap
+    svg.progress-ring viewBox="0 0 120 120"
+      circle.progress-ring__circle cx="60" cy="60" r="54"
+
+    .display
+      .time
+        input.digits#minutes type="text" placeholder="00" value="03" <span class="colon">:</span>
+        input.digits#seconds type="text" placeholder="00"
+
+    .buttons
+      button#reset disabled=true Сброс
+      button#start Старт
+ 

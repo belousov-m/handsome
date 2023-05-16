@@ -5,4 +5,6 @@
 import { application } from "./application"
 
 import KeysListenerController from "./keys_listener_controller"
+import TimerController from "./timer_controller"
 application.register("keys_listener", KeysListenerController)
+application.register("timer", TimerController)
