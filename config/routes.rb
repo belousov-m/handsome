@@ -9,8 +9,10 @@ Rails.application.routes.draw do
   resources :rounds do
     member do
       post :correct_answer
+      post :prev_correct_answer
       post :incorrect_answer
       post :go_to_bank
+      post :reset
     end
   end
 end

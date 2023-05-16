@@ -1,9 +1,13 @@
-= turbo_frame_tag "round_bank" do
-  = render "round_bank", round: @round
+.show-round data-controller="keys_listener"
+  = turbo_frame_tag "round_bank" do
+    = render "round_bank", round: @round
 
-= turbo_frame_tag "game_bank" do
-  = render "game_bank", game: @game
+  = turbo_frame_tag "game_bank" do
+    = render "game_bank", game: @game
 
-p = link_to "Верно", correct_answer_round_path, method: :post
-p = link_to "Не верно", incorrect_answer_round_path, method: :post
-p = link_to "Банк", go_to_bank_round_path, method: :post
+  .hidden-block
+    = link_to "Верно", correct_answer_round_path, method: :post, "data-action"=>"keydown.up@window->keys_listener#upHandler", id: "up-link"
+    = link_to "Не верно", incorrect_answer_round_path, method: :post, "data-action"=>"keydown.left@window->keys_listener#leftHandler", id: "left-link"
+    = link_to "Банк", go_to_bank_round_path, method: :post, "data-action"=>"keydown.right@window->keys_listener#rightHandler", id: "right-link"
+    = link_to "Предыдущий шаг", prev_correct_answer_round_path, method: :post, "data-action"=>"keydown.down@window->keys_listener#downHandler", id: "down-link"
+    = link_to "Сбросить", reset_round_path, method: :post, "data-action"=>"keydown.esc@window->keys_listener#escHandler", id: "esc-link"

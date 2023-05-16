@@ -13,6 +13,13 @@ class RoundsController < ApplicationController
     @round.save!
   end
 
+  def prev_correct_answer
+    return if @round.bank <= 0
+
+    @round.bank -= 100
+    @round.save!
+  end
+
   def incorrect_answer
     @round.bank = 0
     @round.save!
@@ -20,6 +27,14 @@ class RoundsController < ApplicationController
 
   def go_to_bank
     @game.bank += @round.bank
+    @game.save!
+
+    @round.bank = 0
+    @round.save!
+  end
+
+  def reset
+    @game.bank = 0
     @game.save!
 
     @round.bank = 0

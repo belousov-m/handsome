@@ -9,6 +9,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
 import '../assets'
+import "controllers"
 
 Rails.start()
 ActiveStorage.start()
