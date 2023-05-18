@@ -118,7 +118,7 @@ export default class extends Controller {
 
     function resetTimer() {
       clearInterval(intervalId);
-      minuteInput.value = "03";
+      minuteInput.value = "05";
       secondInput.value = "";
       minutesInSeconds = 0;
       secondsInSeconds = 0;
